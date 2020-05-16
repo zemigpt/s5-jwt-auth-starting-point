@@ -4,7 +4,26 @@ This is only my barebones Auth starting point still in development.
 
 ## Configure
 
-First run this ``composer install`` for install of all dependencies.
+First create file ``.env.dev.local`` and configure the following variables:
+
+```
+
+APP_SECRET=
+
+(...)
+DATABASE_URL=
+
+(...)
+JWT_PASSPHRASE=
+
+```
+
+
+First run ``composer install`` for install of all dependencies.
+
+If it gives an error like 'Your requirements could not be resolved to an installable set of packages.' then run 
+
+```composer install --ignore-platform-reqs```
 
 ### Generate keys
 
@@ -23,11 +42,18 @@ Theres a couple of batch files to save us a few keystrokes in Windows.
 ### s.bat
 If you're in Windows there's a batch file ``s.bat`` to save us a few keystrokes in every bin/console command:
 
-Instead of ``php bin/console COMMAND`` just use ``s COMMAND``.\\ 
+Instead of 
+
+```php bin/console COMMAND```
+
+just use 
+
+```s COMMAND```.
 
 ### reset.bat aka 'The nuke'
 
-For resetting the database, migrations and the database while in development, use ``reset``.
+For resetting the database, migrations and the database while in development, use 
+```reset```.
 
 1. It will delete all migration files
 2. It will drop all tables in .dev database
